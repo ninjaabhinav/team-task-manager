@@ -1,6 +1,7 @@
 [build]
 builder = "nixpacks"
 buildCommand = "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend"
+NIXPACKS_NODE_VERSION = "22"
 
 [deploy]
 startCommand = "node backend/server.js"
@@ -9,4 +10,3 @@ restartPolicyMaxRetries = 10
 
 [environments.production.variables]
 NODE_ENV = "production"
-NIXPACKS_NODE_VERSION = "22"
