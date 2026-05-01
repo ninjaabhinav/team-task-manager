@@ -37,7 +37,7 @@ app.use("/api/admin", adminRoutes);
 // Serve React frontend in production
 const frontendDist = path.join(__dirname, "../frontend/dist");
 app.use(express.static(frontendDist));
-app.get("/{*path}", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(frontendDist, "index.html"));
 });
 
